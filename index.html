@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>Happy Monthsary 💖</title>
+  <style>
+    body {
+      font-family: 'Segoe UI', sans-serif;
+      background: #fdf6f0;
+      color: #4b3c36;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      padding: 3rem 1rem;
+    }
+
+    h1 {
+      font-size: 2.5rem;
+      color: #d86b6b;
+      margin-bottom: 1rem;
+    }
+
+    button {
+      background: #f2c1c1;
+      color: #4b3c36;
+      border: none;
+      padding: 1rem 2rem;
+      font-size: 1.1rem;
+      border-radius: 12px;
+      cursor: pointer;
+      box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+      transition: all 0.3s ease;
+    }
+
+    button:hover {
+      background: #f7d8d8;
+      transform: translateY(-2px);
+    }
+
+    .hidden-content {
+      display: none;
+      margin-top: 2rem;
+      text-align: center;
+      animation: fadeIn 1s ease forwards;
+    }
+
+    .message {
+      font-size: 1.3rem;
+      max-width: 600px;
+      margin: 0 auto 2rem;
+      color: #6b4e4e;
+    }
+
+    .gallery {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+      gap: 1rem;
+      padding: 1rem;
+      max-width: 800px;
+    }
+
+    .gallery img {
+      width: 100%;
+      border-radius: 16px;
+      box-shadow: 0 10px 20px rgba(0,0,0,0.1);
+      opacity: 0;
+      transform: scale(0.95);
+      animation: photoFade 1s ease forwards;
+    }
+
+    .gallery img:nth-child(1) { animation-delay: 0.2s; }
+    .gallery img:nth-child(2) { animation-delay: 0.4s; }
+    .gallery img:nth-child(3) { animation-delay: 0.6s; }
+
+    @keyframes fadeIn {
+      from { opacity: 0; transform: translateY(20px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+
+    @keyframes photoFade {
+      to {
+        opacity: 1;
+        transform: scale(1);
+      }
+    }
+  </style>
+</head>
+<body>
+  <h1>Open mo, bebe!! 🌸</h1>
+
+  <button onclick="revealAll()">Click to Reveal</button>
+
+  <div id="reveal" class="hidden-content">
+    <div class="message">
+      Mahal kita palagi my Jana 💖
+    </div>
+
+    <div class="gallery">
+      <img src="49fa1d7b-2d5b-46f3-9efd-4b209a9579ba.jpg" alt="Memory 1" />
+      <img src="c2aa7941-922e-4821-a592-e3b419c53899.jpg" alt="Memory 2" />
+      <img src="e1bafda6-6765-408c-ad5c-9d02d0af4d5e.jpg" alt="Memory 3" />
+    </div>
+  </div>
+
+  <audio id="bgMusic" autoplay loop hidden>
+    <source src="Noah Alejandre - Nahuhulog Na Sa'yo (Official Lyric Video) [Uke_OVPMABM].mp3" type="audio/mpeg" />
+    Your browser does not support the audio element.
+  </audio>
+
+  <script>
+    function revealAll() {
+      const reveal = document.getElementById("reveal");
+      reveal.style.display = "block";
+      document.getElementById("bgMusic").play();
+    }
+  </script>
+</body>
+</html>
